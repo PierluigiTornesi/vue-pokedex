@@ -1,14 +1,18 @@
 <script>
+import AppMainHeader from './components/AppMainHeader.vue';
+
 export default {
   data() {
     return {
       
     }
   },
+  components: {AppMainHeader}
 }
 </script>
 
 <template>
+  <AppMainHeader></AppMainHeader>
   <router-view></router-view>
 </template>
 

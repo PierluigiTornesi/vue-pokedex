@@ -1,6 +1,7 @@
 <script>
 import axios from "axios";
 import TypePokemon from "./partials/TypePokemon.vue";
+import InfoBtn from "./partials/InfoBtn.vue";
 
 export default {
   data() {
@@ -26,7 +27,7 @@ export default {
     });
   },
   methods: {},
-  components: { TypePokemon },
+  components: { TypePokemon, InfoBtn},
 };
 </script>
 
@@ -54,6 +55,7 @@ export default {
       <div class="poke-type">
         <TypePokemon :pokemonTypes="myPokemonTypes" />
       </div>
+      <InfoBtn :pokemon="pokemon"/>
     </div>
   </div>
 </template>

@@ -22,21 +22,18 @@ export default{
 </script>
 
 <template>
-  <div class="container">
-    <ul>
-      <li v-for="link in links" :key="link.title">
-          <h2>
-            <router-link :to="{name: link.name}" class="nav-link">{{ link.title }}</router-link>
-          </h2>
-      </li>
-    </ul>
+  <div class="home">
+    <div class="container">
+      <div class="home-text ">
+        
+      </div>
+    </div>
   </div>
-  
 </template>
 
 <style scoped lang="scss">
-
-ul{
-  list-style-type: none;
-}
+  .home {
+    background-image: url('../assets/img/pokedex.jpg');
+    height: calc(100vh - 50px);
+  }
 </style>

@@ -19,7 +19,7 @@ const router = createRouter({
             component: Pokedex,
         },
         {
-            path: "/info/:id",
+            path: "/info/:slug",
             name: "info",
             component: InfoPokemon,
         },
