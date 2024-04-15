@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Sniglet&display=swap');
+@import "node_modules/bootstrap/scss/bootstrap";
+@import "./partials/variables.scss";
+
+
+//reset
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+//font 
+body {
+  font-family: 'Sniglet', cursive;
+  text-align: center;
+}
+
+/* body background class */
+.bg-body {
+  background: linear-gradient(to right, #7f50e4 0%, #4c05d0);
+}
+
+/* class for the background of the first gen */
+.first-gen{
+  background:linear-gradient(to right, #FF6680, #FF173D);
+}
+/* class for the background of the second gen */
+.second-gen{
+  background: linear-gradient(to right, #FFB287, #FF6600);
+}
+/* class for the background of the third gen */
+.third-gen{
+  background: linear-gradient(to right, #FFFF7D, #FFCE1C);
+}
+/* class for the background of the fourth gen */
+.fourth-gen{
+  background: linear-gradient(to right, #DEFF70, #9ECF17);
+}
+/* class for the background of the fifth gen */
+.fifth-gen{
+  background: linear-gradient(to right, #66FF36, #00C200);
+}
+/* class for the background of the sixth gen */
+.sixth-gen{
+  background: linear-gradient(to right, #A1FFE1, #1FE0B4);
+}
+/* class for the background of the seventh gen  */
+.seventh-gen{
+  background: linear-gradient(to right, #73DCFF, #00A2FF);
+}
+/* class for the background of the eighth gen  */
+.eighth-gen{
+  background:linear-gradient(to right, #FF85F7, #FF3DF0);
+}
+/* class for the background of the ninth gen */
+.ninth-gen{
+  background: linear-gradient(to right, #D1D1D1, #A8A8A8);
+}
