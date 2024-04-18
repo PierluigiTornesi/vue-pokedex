@@ -13,6 +13,9 @@ export default {
       pokemonEvolution: [],
       loading: false,
       store,
+      pokemonSpecies:'',
+      pokemonSecond: '',
+      pokemonThird: '',
     }
   },
   components: {TypePokemon, Card},
@@ -33,8 +36,29 @@ export default {
       this.pokemonDetails = resp.data
       console.log(this.pokemonDetails);
       axios.get(this.pokemonDetails.evolution_chain.url).then((resp)=>{
-        this.pokemonEvolution = resp.data.chain.evolves_to
+        
+        //verifico se abbia una catena evolutiva
+        if( resp.data.chain.evolves_to.length !== 0){
+          this.pokemonEvolution = resp.data.chain.evolves_to
+
+          //verifico se abbia una prima evoluzione
+         if(this.pokemonEvolution[0].species.name.length !== 0){
+           this.pokemonSecond = this.pokemonEvolution[0].species.name
+         }
+        
+        //verifico se abbia una seconda evoluzione
+         if(this.pokemonEvolution[0].evolves_to.length !== 0){
+           this.pokemonThird = this.pokemonEvolution[0].evolves_to[0].species.name
+         }
+        }
+        
+        //mi salvo lo starter della sua specie
         this.pokemonSpecies = resp.data.chain.species.name
+        console.log( this.pokemonEvolution,'tutte le evoluzioni');
+        console.log( this.pokemonSpecies,'il pokemon starter della specie');
+        console.log( this.pokemonSecond,'il pokemon dopo lo starter');
+        console.log( this.pokemonThird,'il pokemon dopo il secondo');
+
       })
     }).finally(()=>{
       this.loading = true
@@ -67,10 +91,18 @@ export default {
           </div>
         </div>
         <div class="col-12" v-if="pokemonEvolution.length === 0">
-          <p>Il pokemon non si evolve</p>
+          <h2>Il pokemon non ha evoluzioni</h2>
         </div>
         <div class="col-12" v-else>
-          <Card :pokemon = "this.store.pokemonArray[pokemon.id - 1]"/>
+          <div class="col-3">
+            <p>{{ pokemonSpecies ? pokemonSpecies : '' }}</p>
+          </div>
+          <div class="col-3">
+            <p>{{ pokemonSecond ? pokemonSecond : '' }}</p>
+          </div>
+          <div class="col-3">
+            <p>{{ pokemonThird ? pokemonThird : '' }}</p>
+          </div>
         </div>
       </div>
     </div>
