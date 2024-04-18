@@ -68,10 +68,9 @@ export default {
         </div>
         <div class="col-12" v-if="pokemonEvolution.length === 0">
           <p>Il pokemon non si evolve</p>
-          <Card />
         </div>
         <div class="col-12" v-else>
-          
+          <Card :pokemon = "this.store.pokemonArray[pokemon.id - 1]"/>
         </div>
       </div>
     </div>
